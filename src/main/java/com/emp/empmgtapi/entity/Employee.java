@@ -1,9 +1,12 @@
 package com.emp.empmgtapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -16,4 +19,12 @@ public class Employee {
     private String name;
     private String email;
     private Date dob;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "employee_skills",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "skill_id")
+    )
+    private Set<Skill> owningSkills = new HashSet<>();
 }

@@ -1,8 +1,11 @@
 package com.emp.empmgtapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -13,4 +16,8 @@ public class Skill {
     @Column(name = "skill_id")
     private Long skillId;
     private String label;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "owningSkills")
+    private Set<Employee> employeeSet = new HashSet<>();
 }
