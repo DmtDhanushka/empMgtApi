@@ -31,5 +31,8 @@ public class EmployeeController {
         employeeService.deleteEmployee(empId);
         return new ResponseEntity(HttpStatus.OK);
     }
+//
+//    @PutMapping("/addSkills")
+//    public ResponseEntity<>
 
 }

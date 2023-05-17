@@ -19,5 +19,5 @@ public class Skill {
 
     @JsonIgnore
     @ManyToMany(mappedBy = "owningSkills")
-    private Set<Employee> employeeSet = new HashSet<>();
+    private Set<Employee> employeeSet;
 }

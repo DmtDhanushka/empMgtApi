@@ -20,11 +20,10 @@ public class Employee {
     private String email;
     private Date dob;
 
-    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "employee_skills",
             joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "skill_id")
     )
-    private Set<Skill> owningSkills = new HashSet<>();
+    private Set<Skill> owningSkills;
 }
