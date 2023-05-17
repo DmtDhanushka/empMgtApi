@@ -21,7 +21,7 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping(value = {"/getEmployees", "/{empId}"})
+    @GetMapping(value = {"/getEmployees","/{empId}"})
     public List<Employee> getEmployee(@PathVariable(required = false) Long empId) {
         return employeeService.getEmployeeDetails(empId);
     }
