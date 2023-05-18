@@ -1,6 +1,7 @@
 package com.emp.empmgtapi.controller;
 
 import com.emp.empmgtapi.entity.Employee;
+import com.emp.empmgtapi.entity.Skill;
 import com.emp.empmgtapi.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,8 +32,11 @@ public class EmployeeController {
         employeeService.deleteEmployee(empId);
         return new ResponseEntity(HttpStatus.OK);
     }
-//
-//    @PutMapping("/addSkills")
-//    public ResponseEntity<>
+
+    @PutMapping("/update/{empId}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Long empId, @RequestBody Employee empObj){
+        employeeService.updateSkill(empId, empObj);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
 }

@@ -34,4 +34,11 @@ public class SkillController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+
+    @PutMapping("/updateSkill/{skillId}")
+    public ResponseEntity<Skill> updateSkill(@PathVariable Long skillId, @RequestBody Skill skillObj){
+        skillService.updateSkill(skillId, skillObj);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
 }

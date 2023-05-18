@@ -29,4 +29,10 @@ public class SkillService {
     public void deleteSkill(Long skill_id) {
         skillRepository.deleteById(skill_id);
     }
+
+    public void updateSkill(Long skillId, Skill skillObj) {
+        Skill currentSkill = skillRepository.findById(skillId).get();
+        currentSkill.setLabel(skillObj.getLabel());
+        skillRepository.save(currentSkill);
+    }
 }
