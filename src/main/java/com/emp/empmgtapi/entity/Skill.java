@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,5 +20,5 @@ public class Skill {
 
     @JsonIgnore
     @ManyToMany(mappedBy = "owningSkills")
-    private Set<Employee> employeeSet;
+    private List<Employee> employeeSet;
 }

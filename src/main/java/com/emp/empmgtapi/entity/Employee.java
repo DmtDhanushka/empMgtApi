@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -25,5 +26,5 @@ public class Employee {
             joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "skill_id")
     )
-    private Set<Skill> owningSkills;
+    private List<Skill> owningSkills;
 }
