@@ -8,6 +8,7 @@ public class EmployeeDTO {
     private String name;
     private String email;
     private Date dob;
+    private Set<Long> owningSkillIds;
 
     public Long getEmpId() {
         return empId;
@@ -48,8 +49,6 @@ public class EmployeeDTO {
     public void setOwningSkillIds(Set<Long> owningSkillIds) {
         this.owningSkillIds = owningSkillIds;
     }
-
-    private Set<Long> owningSkillIds;
 
 
 }

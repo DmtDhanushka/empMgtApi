@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/skills")
@@ -36,7 +37,7 @@ public class SkillController {
 
 
     @PutMapping("/updateSkill/{skillId}")
-    public ResponseEntity<Skill> updateSkill(@PathVariable Long skillId, @RequestBody Skill skillObj){
+    public ResponseEntity<Skill> updateSkill(@PathVariable Long skillId, @RequestBody Skill skillObj) {
         skillService.updateSkill(skillId, skillObj);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

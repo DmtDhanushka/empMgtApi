@@ -9,7 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin
+
+@CrossOrigin()
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -22,7 +23,7 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping(value = {"/getEmployees","/{empId}"})
+    @GetMapping(value = {"/getEmployees", "/{empId}"})
     public List<Employee> getEmployee(@PathVariable(required = false) Long empId) {
         return employeeService.getEmployeeDetails(empId);
     }
@@ -34,7 +35,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/update/{empId}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable Long empId, @RequestBody Employee empObj){
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Long empId, @RequestBody Employee empObj) {
         employeeService.updateSkill(empId, empObj);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

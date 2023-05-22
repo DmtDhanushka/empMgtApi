@@ -1,8 +1,6 @@
 package com.emp.empmgtapi.service;
 
-import com.emp.empmgtapi.entity.Employee;
 import com.emp.empmgtapi.entity.Skill;
-import com.emp.empmgtapi.repository.EmployeeRepository;
 import com.emp.empmgtapi.repository.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
